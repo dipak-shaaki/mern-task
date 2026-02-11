@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Novatech | Software & Web Solutions</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo"><span class="logo-mark">Nova</span>Tech</div>
+        <input type="checkbox" id="navToggle" class="nav-toggle" />
+        <label class="hamburger" for="navToggle" aria-label="Toggle menu">&#9776;</label>
+        <nav class="nav-links">
+            <a href="#hero">Home</a>
+            <a href="#services">Services</a>
+            <a href="#work">Work</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <p class="eyebrow">Nepal-based, global-ready</p>
+                <h1>Your digital success starts here</h1>
+                <p class="hero-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-primary">Request a quote</a>
+                    <a href="#services" class="btn-secondary">Explore services</a>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <h3>120+</h3>
+                        <p>Projects shipped</p>
+                    </div>
+                    <div>
+                        <h3>5 days</h3>
+                        <p>Average MVP kickoff</p>
+                    </div>
+                    <div>
+                        <h3>98%</h3>
+                        <p>Client retention</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-media">
+                <img src="image/hero.svg" alt="Team collaborating around a product dashboard" />
+                <div class="hero-badges">
+                    <span>Product Strategy</span>
+                    <span>UI/UX Design</span>
+                    <span>Full-stack Engineering</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <h2>Our services</h2>
+        <p class="section-lead"></p>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Web Development</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+            </div>
+            <div class="card">
+                <h3>Mobile App Dev</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+            </div>
+            <div class="card">
+                <h3>SEO & Marketing</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="work-section">
+        <h2>Latest projects</h2>
+        <p class="section-lead"></p>
+        <div class="card-grid">
+            <article class="card">
+                <img src="image/office.svg" alt="Modern workspace for a fintech platform" />
+                <h3>HimalPay</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+            </article>
+            <article class="card">
+                <img src="image/team.svg" alt="Remote team working on a logistics dashboard" />
+                <h3>LogiGo</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+            </article>
+            <article class="card">
+                <img src="image/hero.svg" alt="Product landing page for a SaaS startup" />
+                <h3>SaaSLaunch</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact us</h2>
+        <p class="section-lead">Have a project in mind? Get in touch with us.</p>
+        <div class="contact-grid">
+            <form id="contactForm" novalidate>
+                <div class="field">
+                    <label for="name">Your name</label>
+                    <input id="name" type="text" name="name" placeholder="Full name" minlength="2" required />
+                    <small class="field-error">Name must be at least 2 characters.</small>
+                </div>
+                <div class="field">
+                    <label for="email">Work email</label>
+                    <input id="email" type="email" name="email" placeholder="name@company.com" required />
+                    <small class="field-error">Please enter a valid email.</small>
+                </div>
+                <div class="field">
+                    <label for="message">Project details</label>
+                    <textarea id="message" name="message" rows="5"
+                        placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit" minlength="10"
+                        required></textarea>
+                    <small class="field-error">Please enter at least 10 characters.</small>
+                </div>
+                <button type="submit" class="btn-primary btn-submit">
+                    <span>Send message</span>
+                    <span class="btn-spinner" aria-hidden="true"></span>
+                </button>
+                <p id="formMessage" class="form-message" aria-live="polite"></p>
+            </form>
+            <div class="contact-card">
+                <h3>Novatech HQ</h3>
+                <p>Putalisadak, Kathmandu, Nepal</p>
+                <p>Novatech.com</p>
+                <p>+977 01 555 1234</p>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <p>&copy; 2026 Novatech. All rights reserved.</p>
+    </footer>
+
+    <script src="js/formValidation.js"></script>
+</body>
+
+</html>

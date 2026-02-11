@@ -1,12 +1,12 @@
 import express from 'express'
-import mongoose from 'mongoose'
 import taskRoutes from './routes/taskRoutes.js'
+import cors from 'cors'
 
 const app = express()
+app.use(cors())
 
 app.use(express.json())
 
-app.use("api/tasks", taskRoutes)
+app.use('/api/tasks', taskRoutes)
 
-
-export { app }
+export default app

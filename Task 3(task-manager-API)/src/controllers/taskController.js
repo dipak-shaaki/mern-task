@@ -1,13 +1,10 @@
-import { taskSchema } from "../models/taskModel";
+import Task from "../models/taskModel.js";
 
 //create task
 const createTask = async (req, res) => {
     try {
         const { title, description, status, priority } = req.body;
-        const task = await task.create({
-            data:
-                { title, description, status, priority }
-        })
+        const task = await Task.create({ title, description, status, priority })
         res.status(201).json(task)
     } catch (error) {
         res.status(400).json({
@@ -20,8 +17,8 @@ const createTask = async (req, res) => {
 //Get the tasks
 const getAllTasks = async (req, res) => {
     try {
-        const task = await task.find();
-        res.json();
+        const tasks = await Task.find();
+        res.status(200).json(tasks);
     }
     catch (error) {
         res.status(401).json({
@@ -34,8 +31,7 @@ const getAllTasks = async (req, res) => {
 //get single task (GET/:id)
 
 const getSingleTask = async (req, res) => {
-
-    const task = await task.findById(req.params.id)
+    const task = await Task.findById(req.params.id)
     if (!task) {
         return res.status(404).json({
             message: "not found"
@@ -47,7 +43,7 @@ const getSingleTask = async (req, res) => {
 
 //update a task fully(PUT)
 const updateTask = async (req, res) => {
-    const task = await task.findByIdAndUpdate(req.params.id, req.body, {
+    const task = await Task.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
         runValidators: true
 
@@ -58,12 +54,12 @@ const updateTask = async (req, res) => {
             message: "Not found"
         })
     }
-    res.status(201).json(task)
+    res.status(200).json(task)
 }
 
 //Patch
 const patchTask = async (req, res) => {
-    const task = await task.findByIdAndUpdate(req.params.id,
+    const task = await Task.findByIdAndUpdate(req.params.id,
         req.body, {
         new: true,
         runValidators: true
@@ -74,28 +70,27 @@ const patchTask = async (req, res) => {
             message: "Not found"
         })
     }
-    res.status(201).json(task)
+    res.status(200).json(task)
 }
 
 //delete task
 
 const deleteTask = async (req, res) => {
-    const task = await findByIdAndDelete(req.params.id)
+    const task = await Task.findByIdAndDelete(req.params.id)
 
     if (!task) {
         res.status(404).json({
             message: "Not found"
         })
     }
-    res.status(201).json(task)
+    res.status(200).json(task)
 }
 
-export {
+export default {
     createTask,
     updateTask,
     deleteTask,
     getAllTasks,
     getSingleTask,
     patchTask
-
 }
